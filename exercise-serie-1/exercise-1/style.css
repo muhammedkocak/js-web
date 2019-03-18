@@ -1,1 +1,32 @@
-/*Use the .scss file instead!*/
+body {
+  margin: 0;
+}
+
+#blackDiv {
+  top: 100px;
+  background-color: black;
+  width: 250px;
+  height: 250px;
+}
+
+#blueDiv {
+  top: 100px;
+  background-color: blue;
+  width: 250px;
+  height: 250px;
+}
+
+#redDiv {
+  top: 100px;
+  background-color: red;
+  width: 250px;
+  height: 250px;
+}
+
+#greenDiv {
+  top: 100px;
+  background-color: green;
+  width: 250px;
+  height: 250px;
+}
+/*# sourceMappingURL=style.css.map */
