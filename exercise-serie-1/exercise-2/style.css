@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+button {
+  margin: 20px;
+  padding: 10px;
+}
+
+#answer {
+  padding-top: 20px;
+}
+/*# sourceMappingURL=style.css.map */
