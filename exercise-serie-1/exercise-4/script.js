@@ -12,4 +12,4 @@ function submitBday() {
     theBday.innerHTML = Q4A;
 }
 
-let bday = document.getElementById("bday").setAttribute("max", date.now());
+    bday.max = new Date().toISOString().split("T")[0];
