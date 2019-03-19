@@ -4,7 +4,7 @@ console.log("This script is linked properly!")
 
 //Write your JS code here...
 
-function form() {
+function form(event) {
     event.preventDefault()
     let field1=document.getElementById("name").value;
     let field2=document.getElementById("power").value;
