@@ -4,8 +4,9 @@ console.log("This script is linked properly!")
 
 //Write your JS code here...
 
-function form(event) {
-    event.preventDefault()
+function form() {
+   // event.preventDefault()
+    
     let field1=document.getElementById("name").value;
     let field2=document.getElementById("power").value;
     let field3=document.getElementById("motivation").value;
@@ -17,6 +18,8 @@ function form(event) {
 
     {
         document.getElementById("display2").innerHTML=result;
+        document.getElementById("form").style.display = "none";
+        
     }
 }
 
