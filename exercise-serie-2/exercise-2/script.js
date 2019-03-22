@@ -1,43 +1,61 @@
 //Check to see if script is linked properly.
 console.log("This script is linked properly!")
 
-const app = document.getElementById('root')
+//Write your JS code here...
 
-//const logo = document.createElement('img')
-//logo.src = 'logo.png'
-
-const container = document.createElement('div')
-container.setAttribute('class', 'container')
-
-//app.appendChild(logo)
-app.appendChild(container)
-
+// Create a request variable and assign a new XMLHttpRequest object to it.
 let request = new XMLHttpRequest()
+
+// Open a new connection, using the GET request on the URL endpoint
 request.open('GET', 'https://api.punkapi.com/v2/beers', true)
-request.onload = function() {
+
+request.onload = function () {
   // Begin accessing JSON data here
-  let data = JSON.parse(this.response)
+  let data = JSON.parse(this.response);
+
   if (request.status >= 200 && request.status < 400) {
-    data.forEach(beers => {
-      const card = document.createElement('div')
-      card.setAttribute('class', 'card')
+        data.forEach(beers => {
+            // Log each movie's title
+            // console.log(beers.name);
+            //  console.log(beers.description);
+    const row1 = document.getElementById("row-1");
+    const card = document.createElement("div");
+    card.setAttribute("class","card shadow d-flex align-items-center mt-5");
 
-      const h1 = document.createElement('h1')
-      h1.textContent = beers.name
+    const image = document.createElement("img");
+    image.setAttribute("class","card-img-top card-title pt-3 pb-3 rounded");
+    image.src = beers.image_url;
+    
+    const cbody = document.createElement("div");
+    cbody.setAttribute("class", "card-body d-flex justify-content-center flex-column text-center");
 
-      const p = document.createElement('p')
-      beers.tagline = beers.tagline.substring(0, 300)
-      p.textContent = `${beers.first_brewed}...`
+    const h3 = document.createElement("h3");
+    h3.textContent=beers.name;
 
-      container.appendChild(card)
-      card.appendChild(h1)
-      card.appendChild(p)
-    })
-  } else {
-    const errorMessage = document.createElement('marquee')
-    errorMessage.textContent = `Gah, it's not working!`
-    app.appendChild(errorMessage)
+    const h4 = document.createElement("h4");
+    h4.textContent=beers.tagline;
+
+    const p = document.createElement("p");
+    p.textContent=beers.first_brewed;
+
+
+
+    row1.appendChild(card);
+    card.appendChild(image);
+    card.appendChild(cbody);
+    cbody.appendChild(h3);
+    cbody.appendChild(h4);
+    cbody.appendChild(p); 
+})
+
+} else {
+            console.log('error');
   }
+
+   
+  
 }
 
+
+// Send request
 request.send()
