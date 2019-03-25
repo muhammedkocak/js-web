@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+#display {
+  font-size: 2rem;
+}
+
+.button:active {
+  -webkit-transform: scale(0.9) rotate(5deg) translate(5px, -5px) skew(5deg, -5deg);
+          transform: scale(0.9) rotate(5deg) translate(5px, -5px) skew(5deg, -5deg);
+}
+/*# sourceMappingURL=style.css.map */

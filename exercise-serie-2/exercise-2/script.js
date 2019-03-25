@@ -15,10 +15,14 @@ request.onload = function () {
 
   if (request.status >= 200 && request.status < 400) {
         data.forEach(beers => {
-            // Log each movie's title
-            // console.log(beers.name);
-            //  console.log(beers.description);
+            // Log each beers title
+
+            /* console.log(beers.name);
+              console.log(beers.description); */
+
+    // Create a div with a row1 class
     const row1 = document.getElementById("row-1");
+    // Create a div with a card class
     const card = document.createElement("div");
     card.setAttribute("class","card shadow d-flex align-items-center mt-5");
 
@@ -38,9 +42,9 @@ request.onload = function () {
     const p = document.createElement("p");
     p.textContent=beers.first_brewed;
 
-
-
+    // Append the cards to the container element
     row1.appendChild(card);
+    // Each card will contain an image, cbody, h3, h4 and p
     card.appendChild(image);
     card.appendChild(cbody);
     cbody.appendChild(h3);
